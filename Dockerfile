@@ -3,7 +3,7 @@ FROM alpine:latest
 COPY ["znc.conf", "/znc/configs/znc.conf"]
 
 RUN apk --update add znc \
-    && rm -rf /var/cache/ \
+    && rm -rf /var/cache/apk/* \
     && chown -R znc:znc /znc
 
 VOLUME /znc
